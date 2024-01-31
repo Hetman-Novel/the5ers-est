@@ -1,0 +1,91 @@
+.block {
+    margin-bottom: 22px;
+	width: 100%;
+}
+.block__item {
+    margin-top: 3px;
+}
+.block__title {
+    background-color: transparent;
+    border: none;
+    color: #000;
+    cursor: default;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+.block__content {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+}
+.block__text {
+    overflow: hidden;
+}
+.block._init .block__title::before {
+    background-color: #fff;
+    content: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='9' viewBox='0 0 12 9' fill='none'%3e%3cpath d='M6 8.3751L0 2.3751L1.4 0.975098L6 5.5751L10.6 0.975098L12 2.3751L6 8.3751Z' fill='black'/%3e%3c/svg%3e");
+    height: 12px;
+    position: absolute;
+    right: -10px;
+    transition: all 0.3s ease 0s;
+    top: 1px;
+    width: 23px;
+    z-index: 0;
+}
+.block._init .block__title._active::before {
+    transform: scale(1, -1);
+    top: 16px;
+}
+
+@media (min-width: 721px) {
+
+    .block__title .mobile,
+    .economic-calendar__block-list-weekdays.mobile {
+        display: none;
+    }
+}
+@media (max-width: 720.98px) {
+
+    .block__title {
+        color: #1A1E41;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+        padding-right: 25px;
+    }
+    .block__title::after {
+        background-color: #E7E7E7;
+        content: '';
+        display: block;
+        height: 2px;
+        left: -18px;
+        margin: 5px 0 0;
+        position: relative;
+        width: calc(100% + 61px);
+    }
+    .block__title .desktop,
+    .economic-calendar__block-list-weekdays.desktop {
+        display: none;
+    }
+}
+@media (max-width: 575.98px) {
+
+    .block__title::after {
+        left: -10px;
+        width: calc(100% + 45px);
+    }
+}
+@media (max-width: 480px) {
+
+    .block__item {
+        margin-top: 0;
+    }
+    .block__item:not(:last-child) {
+        margin-bottom: 12px;
+    }
+}

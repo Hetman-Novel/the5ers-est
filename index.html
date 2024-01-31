@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap&_v=20240131201345" rel="stylesheet">
+   <!--<link rel="stylesheet" href="files/lazy-load-for-images/lazy-load-for-images.css?_v=20240131201345">-->
+   <link rel="stylesheet" href="files/select/select.css?_v=20240131201345">
+   <link rel="stylesheet" href="files/popup/popup.css?_v=20240131201345">
+   <link rel="stylesheet" href="files/spoller/spoller.css?_v=20240131201345">
+   <link rel="stylesheet" href="css/style.min.css?_v=20240131201345">
+   <!--<link rel="icon" type="image/svg+xml" href="images/svg/favicon.svg">-->
+   <title>Home</title>
+</head>
+
+<body>
+   <div class="wrapper">
+      
+      <main class="main">
+         <section class="economic-calendar">
+            <h2 class="economic-calendar__title">Economic Calendar</h2>
+            <div class="economic-calendar__block">
+               <div class="economic-calendar__block-head">
+                  <div class="economic-calendar__block-head-column">
+                     <button type="button" id="ec-filter-btn" class="economic-calendar__btn-filter">
+                        <span>Filter</span>
+                     </button>
+                  </div>
+                  <div class="economic-calendar__block-head-column">
+                     <p>Choose your Timezone</p>
+                     <div class="select">
+                        <input class="select__input" type="hidden" name="server-time" value="">
+                        <div class="select__head">Server Time</div>
+                        <ul class="select__list">
+                           <li class="select__item">Server 1</li>
+                           <li class="select__item">Server 2</li>
+                           <li class="select__item">Server 3</li>
+                           <li class="select__item">Server 4</li>
+                           <li class="select__item">Server 5</li>
+                           <li class="select__item">Server 6</li>
+                           <li class="select__item">Server 7</li>
+                           <li class="select__item">Server 8</li>
+                           <li class="select__item">Server 9</li>
+                           <li class="select__item">Server 10</li>
+                        </ul>
+                    </div>
+                  </div>
+                  <div class="economic-calendar__block-head-column">
+                     <div data-spollers="720,max" class="block">
+                        <div class="block__item">
+                           <button tabindex="-1" type="button" data-spoller class="block__title">Currency</button>
+                           <div class="block__text">
+                              <ul class="economic-calendar__block-list-currency">
+                                 <li>
+                                    <button id="ec-currency-all" type="button">All</button>
+                                 </li>
+                                 <li>
+                                    <button type="button" class="checked">
+                                       <img src="images/flag-nzd.png" alt="">
+                                    </button>
+                                 </li>
+                                 <li>
+                                    <button type="button" class="checked">
+                                       <img src="images/flag-eur.png" alt="">
+                                    </button>
+                                 </li>
+                                 <li>
+                                    <button type="button" class="checked">
+                                       <img src="images/flag-usd.png" alt="">
+                                    </button>
+                                 </li>
+                                 <li>
+                                    <button type="button">
+                                       <img src="images/flag-jpy.png" alt="">
+                                    </button>
+                                 </li>
+                                 <li>
+                                    <button type="button">
+                                       <img src="images/flag-cad.png" alt="">
+                                    </button>
+                                 </li>
+                                 <li>
+                                    <button type="button" class="checked">
+                                       <img src="images/flag-gbp.png" alt="">
+                                    </button>
+                                 </li>
+                                 <li>
+                                    <button type="button">
+                                       <img src="images/flag-chf.png" alt="">
+                                    </button>
+                                 </li>
+                                 <li>
+                                    <button type="button" class="checked">
+                                       <img src="images/flag-nzd.png" alt="">
+                                    </button>
+                                 </li>
+                                 <li>
+                                    <button type="button" class="checked">
+                                       <img src="images/flag-cny.png" alt="">
+                                    </button>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="economic-calendar__block-head-column">
+                     <div data-spollers="720,max" class="block">
+                        <div class="block__item">
+                           <button tabindex="-1" type="button" data-spoller class="block__title">
+                              <span class="desktop">Weekdays</span>
+                              <span class="mobile">Impact</span>
+                           </button>
+                           <div class="block__text">
+                              <ul class="economic-calendar__block-list-weekdays desktop">
+                                 <li><button type="button" id="ec-weekdays-all">All</button></li>
+                                 <li><button type="button" class="checked">Sun</button></li>
+                                 <li><button type="button" class="checked">Mon</button></li>
+                                 <li><button type="button">Tue</button></li>
+                                 <li><button type="button">Wed</button></li>
+                                 <li><button type="button" class="checked">Thu</button></li>
+                                 <li><button type="button" class="checked">Fri</button></li>
+                              </ul>
+                              <ul class="economic-calendar__block-list-weekdays mobile">
+                                 <li><button type="button" id="ec-weekdays-all">All</button></li>
+                                 <li><button type="button" class="low checked">Low</button></li>
+                                 <li><button type="button" class="medium checked">Medium</button></li>
+                                 <li><button type="button" class="high">High</button></li>
+                                 <li><button type="button" class="no-inpact">No Impact</button></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="economic-calendar__block-labels">
+                  <div class="economic-calendar__block-list-column">
+                     <button type="button" class="js-order no-cursor">Time</button>
+                  </div>
+                  <div class="economic-calendar__block-list-column">
+                     <button type="button" class="js-order no-cursor">Currency</button>
+                  </div>
+                  <div class="economic-calendar__block-list-column">
+                     <button type="button" class="js-order no-cursor">Impact</button>
+                  </div>
+                  <div class="economic-calendar__block-list-column">
+                     <button type="button" class="js-order no-cursor">Event</button>
+                  </div>
+                  <div class="economic-calendar__block-list-column">
+                     <button type="button" class="js-order no-cursor">Previous</button>
+                  </div>
+                  <div class="economic-calendar__block-list-column">
+                     <button type="button" class="js-order no-cursor">Actual</button>
+                  </div>
+                  <div class="economic-calendar__block-list-column">
+                     <button type="button" class="js-order no-cursor">Forecast</button>
+                  </div>
+               </div>
+               <div class="economic-calendar__block-list">
+                  <h3>Sun Jan 22 2024</h3>
+                  <div class="economic-calendar__block-list-item">
+                     <div class="economic-calendar__block-list-column">
+                        <a href="#popup-1" class="popup-link">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M7.2 12H8.8V8.8H12V7.2H8.8V4H7.2V7.2H4V8.8H7.2V12ZM8 16C6.89333 16 5.85333 15.79 4.88 15.37C3.90667 14.95 3.06 14.38 2.34 13.66C1.62 12.94 1.05 12.0933 0.63 11.12C0.21 10.1467 0 9.10667 0 8C0 6.89333 0.21 5.85333 0.63 4.88C1.05 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.05 4.88 0.63C5.85333 0.21 6.89333 0 8 0C9.10667 0 10.1467 0.21 11.12 0.63C12.0933 1.05 12.94 1.62 13.66 2.34C14.38 3.06 14.95 3.90667 15.37 4.88C15.79 5.85333 16 6.89333 16 8C16 9.10667 15.79 10.1467 15.37 11.12C14.95 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.95 11.12 15.37C10.1467 15.79 9.10667 16 8 16ZM8 14.4C9.78667 14.4 11.3 13.78 12.54 12.54C13.78 11.3 14.4 9.78667 14.4 8C14.4 6.21333 13.78 4.7 12.54 3.46C11.3 2.22 9.78667 1.6 8 1.6C6.21333 1.6 4.7 2.22 3.46 3.46C2.22 4.7 1.6 6.21333 1.6 8C1.6 9.78667 2.22 11.3 3.46 12.54C4.7 13.78 6.21333 14.4 8 14.4Z" fill="#1A1E41"/>
+                           </svg>
+                        </a>
+                        <p>08:00</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <div class="wrap-flag">
+                           <img src="images/flag-nzd.png" alt="">
+                        </div>
+                        <p>NZD</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column color-for-low">
+                        <p>LOW</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>Wards Total Vehicle Sales</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.7%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>8.8%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.6%</p>
+                     </div>
+                     <div id="popup-1" class="popup">
+                        <div class="popup__body">
+                           <div class="popup__content">
+                              <div class="popup__head">
+                                 <h4>Sun Jan 22 2024&nbsp; 08:00</h4>
+                                 <a href="" class="popup__close close-popup">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                       <path fill-rule="evenodd" clip-rule="evenodd" d="M13.6224 2.21017C14.1282 1.70439 14.1282 0.885111 13.6224 0.379333C13.1166 -0.126444 12.2973 -0.126444 11.7915 0.379333L7.00091 5.16996L2.21028 0.379333C1.7045 -0.126444 0.885215 -0.126444 0.379437 0.379333C-0.125394 0.885111 -0.125394 1.70439 0.379437 2.21017L5.17007 7.0008L0.379333 11.7915C-0.126444 12.2973 -0.126444 13.1166 0.379333 13.6224C0.885111 14.1282 1.70439 14.1282 2.21017 13.6224L7.00091 8.83164L11.7916 13.6224C12.2974 14.1282 13.1167 14.1282 13.6225 13.6224C14.1283 13.1166 14.1283 12.2973 13.6225 11.7915L8.83175 7.0008L13.6224 2.21017Z" fill="#28282A"/>
+                                    </svg>
+                                 </a>
+                              </div>
+                              <ul class="popup__list">
+                                 <li>
+                                    <div class="popup__column">
+                                       <p>Currency</p>
+                                    </div>
+                                    <div class="popup__column">
+                                       <div class="popup__column-wrap-flag">
+                                          <img src="images/flag-nzd.png" alt="">
+                                       </div>
+                                       <p>Nzd</p>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="popup__column">
+                                       <p>Impact</p>
+                                    </div>
+                                    <div class="popup__column">
+                                       <p>Medium</p>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="popup__column">
+                                       <p>Event</p>
+                                    </div>
+                                    <div class="popup__column">
+                                       <p>Wards Total Vehicle Sales</p>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="popup__column">
+                                       <p>Previous</p>
+                                    </div>
+                                    <div class="popup__column">
+                                       <p>6.7</p>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="popup__column">
+                                       <p>Actual</p>
+                                    </div>
+                                    <div class="popup__column">
+                                       <p>8.8%</p>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="popup__column">
+                                       <p>Forecast</p>
+                                    </div>
+                                    <div class="popup__column">
+                                       <p>6.6%</p>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="economic-calendar__block-list-item">
+                     <div class="economic-calendar__block-list-column">
+                        <a href="#popup-2" class="popup-link">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M7.2 12H8.8V8.8H12V7.2H8.8V4H7.2V7.2H4V8.8H7.2V12ZM8 16C6.89333 16 5.85333 15.79 4.88 15.37C3.90667 14.95 3.06 14.38 2.34 13.66C1.62 12.94 1.05 12.0933 0.63 11.12C0.21 10.1467 0 9.10667 0 8C0 6.89333 0.21 5.85333 0.63 4.88C1.05 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.05 4.88 0.63C5.85333 0.21 6.89333 0 8 0C9.10667 0 10.1467 0.21 11.12 0.63C12.0933 1.05 12.94 1.62 13.66 2.34C14.38 3.06 14.95 3.90667 15.37 4.88C15.79 5.85333 16 6.89333 16 8C16 9.10667 15.79 10.1467 15.37 11.12C14.95 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.95 11.12 15.37C10.1467 15.79 9.10667 16 8 16ZM8 14.4C9.78667 14.4 11.3 13.78 12.54 12.54C13.78 11.3 14.4 9.78667 14.4 8C14.4 6.21333 13.78 4.7 12.54 3.46C11.3 2.22 9.78667 1.6 8 1.6C6.21333 1.6 4.7 2.22 3.46 3.46C2.22 4.7 1.6 6.21333 1.6 8C1.6 9.78667 2.22 11.3 3.46 12.54C4.7 13.78 6.21333 14.4 8 14.4Z" fill="#1A1E41"/>
+                           </svg>
+                        </a>
+                        <p>All Day</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <div class="wrap-flag">
+                           <img src="images/flag-eur.png" alt="">
+                        </div>
+                        <p>EUR</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column color-for-medium">
+                        <p>Medium</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>Switzerland - New Year's Day</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.7%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>8.8%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.6%</p>
+                     </div>
+                     <div id="popup-2" class="popup">
+                        <div class="popup__body">
+                           <div class="popup__content">
+                              <div class="popup__head">
+                                 <h4>Sun Jan 22 2024&nbsp; All Day</h4>
+                                 <a href="" class="popup__close close-popup">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                       <path fill-rule="evenodd" clip-rule="evenodd" d="M13.6224 2.21017C14.1282 1.70439 14.1282 0.885111 13.6224 0.379333C13.1166 -0.126444 12.2973 -0.126444 11.7915 0.379333L7.00091 5.16996L2.21028 0.379333C1.7045 -0.126444 0.885215 -0.126444 0.379437 0.379333C-0.125394 0.885111 -0.125394 1.70439 0.379437 2.21017L5.17007 7.0008L0.379333 11.7915C-0.126444 12.2973 -0.126444 13.1166 0.379333 13.6224C0.885111 14.1282 1.70439 14.1282 2.21017 13.6224L7.00091 8.83164L11.7916 13.6224C12.2974 14.1282 13.1167 14.1282 13.6225 13.6224C14.1283 13.1166 14.1283 12.2973 13.6225 11.7915L8.83175 7.0008L13.6224 2.21017Z" fill="#28282A"/>
+                                    </svg>
+                                 </a>
+                              </div>
+                              <ul class="popup__list">
+                                 <li>
+                                    <div class="popup__column">
+                                       <p>Currency</p>
+                                    </div>
+                                    <div class="popup__column">
+                                       <div class="popup__column-wrap-flag">
+                                          <img src="images/flag-eur.png" alt="">
+                                       </div>
+                                       <p>Eur</p>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="popup__column">
+                                       <p>Impact</p>
+                                    </div>
+                                    <div class="popup__column">
+                                       <p>Medium</p>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="popup__column">
+                                       <p>Event</p>
+                                    </div>
+                                    <div class="popup__column">
+                                       <p>Switzerland - New Year's Day</p>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="popup__column">
+                                       <p>Previous</p>
+                                    </div>
+                                    <div class="popup__column">
+                                       <p>6.7</p>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="popup__column">
+                                       <p>Actual</p>
+                                    </div>
+                                    <div class="popup__column">
+                                       <p>8.8%</p>
+                                    </div>
+                                 </li>
+                                 <li>
+                                    <div class="popup__column">
+                                       <p>Forecast</p>
+                                    </div>
+                                    <div class="popup__column">
+                                       <p>6.6%</p>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="economic-calendar__block-list-item">
+                     <div class="economic-calendar__block-list-column">
+                        <a href="#popup-3" class="popup-link">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M7.2 12H8.8V8.8H12V7.2H8.8V4H7.2V7.2H4V8.8H7.2V12ZM8 16C6.89333 16 5.85333 15.79 4.88 15.37C3.90667 14.95 3.06 14.38 2.34 13.66C1.62 12.94 1.05 12.0933 0.63 11.12C0.21 10.1467 0 9.10667 0 8C0 6.89333 0.21 5.85333 0.63 4.88C1.05 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.05 4.88 0.63C5.85333 0.21 6.89333 0 8 0C9.10667 0 10.1467 0.21 11.12 0.63C12.0933 1.05 12.94 1.62 13.66 2.34C14.38 3.06 14.95 3.90667 15.37 4.88C15.79 5.85333 16 6.89333 16 8C16 9.10667 15.79 10.1467 15.37 11.12C14.95 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.95 11.12 15.37C10.1467 15.79 9.10667 16 8 16ZM8 14.4C9.78667 14.4 11.3 13.78 12.54 12.54C13.78 11.3 14.4 9.78667 14.4 8C14.4 6.21333 13.78 4.7 12.54 3.46C11.3 2.22 9.78667 1.6 8 1.6C6.21333 1.6 4.7 2.22 3.46 3.46C2.22 4.7 1.6 6.21333 1.6 8C1.6 9.78667 2.22 11.3 3.46 12.54C4.7 13.78 6.21333 14.4 8 14.4Z" fill="#1A1E41"/>
+                           </svg>
+                        </a>
+                        <p>09:00</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <div class="wrap-flag">
+                           <img src="images/flag-usd.png" alt="">
+                        </div>
+                        <p>USD</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column color-for-high">
+                        <p>High</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>Wards Total Vehicle Sales</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.7%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>8.8%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.6%</p>
+                     </div>
+                  </div>
+                  <div class="economic-calendar__block-list-item">
+                     <div class="economic-calendar__block-list-column">
+                        <a href="#popup-4" class="popup-link">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M7.2 12H8.8V8.8H12V7.2H8.8V4H7.2V7.2H4V8.8H7.2V12ZM8 16C6.89333 16 5.85333 15.79 4.88 15.37C3.90667 14.95 3.06 14.38 2.34 13.66C1.62 12.94 1.05 12.0933 0.63 11.12C0.21 10.1467 0 9.10667 0 8C0 6.89333 0.21 5.85333 0.63 4.88C1.05 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.05 4.88 0.63C5.85333 0.21 6.89333 0 8 0C9.10667 0 10.1467 0.21 11.12 0.63C12.0933 1.05 12.94 1.62 13.66 2.34C14.38 3.06 14.95 3.90667 15.37 4.88C15.79 5.85333 16 6.89333 16 8C16 9.10667 15.79 10.1467 15.37 11.12C14.95 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.95 11.12 15.37C10.1467 15.79 9.10667 16 8 16ZM8 14.4C9.78667 14.4 11.3 13.78 12.54 12.54C13.78 11.3 14.4 9.78667 14.4 8C14.4 6.21333 13.78 4.7 12.54 3.46C11.3 2.22 9.78667 1.6 8 1.6C6.21333 1.6 4.7 2.22 3.46 3.46C2.22 4.7 1.6 6.21333 1.6 8C1.6 9.78667 2.22 11.3 3.46 12.54C4.7 13.78 6.21333 14.4 8 14.4Z" fill="#1A1E41"/>
+                           </svg>
+                        </a>
+                        <p>13:00</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <div class="wrap-flag">
+                           <img src="images/flag-jpy.png" alt="">
+                        </div>
+                        <p>JPY</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column color-for-no-impact">
+                        <p>No impact</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>Wards Total Vehicle Sales</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.7%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>8.8%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.6%</p>
+                     </div>
+                  </div>
+                  <div class="economic-calendar__block-list-item">
+                     <div class="economic-calendar__block-list-column">
+                        <a href="#popup-5" class="popup-link">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M7.2 12H8.8V8.8H12V7.2H8.8V4H7.2V7.2H4V8.8H7.2V12ZM8 16C6.89333 16 5.85333 15.79 4.88 15.37C3.90667 14.95 3.06 14.38 2.34 13.66C1.62 12.94 1.05 12.0933 0.63 11.12C0.21 10.1467 0 9.10667 0 8C0 6.89333 0.21 5.85333 0.63 4.88C1.05 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.05 4.88 0.63C5.85333 0.21 6.89333 0 8 0C9.10667 0 10.1467 0.21 11.12 0.63C12.0933 1.05 12.94 1.62 13.66 2.34C14.38 3.06 14.95 3.90667 15.37 4.88C15.79 5.85333 16 6.89333 16 8C16 9.10667 15.79 10.1467 15.37 11.12C14.95 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.95 11.12 15.37C10.1467 15.79 9.10667 16 8 16ZM8 14.4C9.78667 14.4 11.3 13.78 12.54 12.54C13.78 11.3 14.4 9.78667 14.4 8C14.4 6.21333 13.78 4.7 12.54 3.46C11.3 2.22 9.78667 1.6 8 1.6C6.21333 1.6 4.7 2.22 3.46 3.46C2.22 4.7 1.6 6.21333 1.6 8C1.6 9.78667 2.22 11.3 3.46 12.54C4.7 13.78 6.21333 14.4 8 14.4Z" fill="#1A1E41"/>
+                           </svg>
+                        </a>
+                        <p>All Day</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <div class="wrap-flag">
+                           <img src="images/flag-cad.png" alt="">
+                        </div>
+                        <p>Cad</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column color-for-low">
+                        <p>Low</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>Italy - New Year's Day</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.7%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>8.8%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.6%</p>
+                     </div>
+                  </div>
+                  <div class="economic-calendar__block-list-item">
+                     <div class="economic-calendar__block-list-column">
+                        <a href="#popup-6" class="popup-link">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M7.2 12H8.8V8.8H12V7.2H8.8V4H7.2V7.2H4V8.8H7.2V12ZM8 16C6.89333 16 5.85333 15.79 4.88 15.37C3.90667 14.95 3.06 14.38 2.34 13.66C1.62 12.94 1.05 12.0933 0.63 11.12C0.21 10.1467 0 9.10667 0 8C0 6.89333 0.21 5.85333 0.63 4.88C1.05 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.05 4.88 0.63C5.85333 0.21 6.89333 0 8 0C9.10667 0 10.1467 0.21 11.12 0.63C12.0933 1.05 12.94 1.62 13.66 2.34C14.38 3.06 14.95 3.90667 15.37 4.88C15.79 5.85333 16 6.89333 16 8C16 9.10667 15.79 10.1467 15.37 11.12C14.95 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.95 11.12 15.37C10.1467 15.79 9.10667 16 8 16ZM8 14.4C9.78667 14.4 11.3 13.78 12.54 12.54C13.78 11.3 14.4 9.78667 14.4 8C14.4 6.21333 13.78 4.7 12.54 3.46C11.3 2.22 9.78667 1.6 8 1.6C6.21333 1.6 4.7 2.22 3.46 3.46C2.22 4.7 1.6 6.21333 1.6 8C1.6 9.78667 2.22 11.3 3.46 12.54C4.7 13.78 6.21333 14.4 8 14.4Z" fill="#1A1E41"/>
+                           </svg>
+                        </a>
+                        <p>14:00</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <div class="wrap-flag">
+                           <img src="images/flag-gbp.png" alt="">
+                        </div>
+                        <p>Gbp</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column color-for-medium">
+                        <p>Medium</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>Wards Total Vehicle Sales</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.7%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>8.8%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.6%</p>
+                     </div>
+                  </div>
+                  <div class="economic-calendar__block-list-item">
+                     <div class="economic-calendar__block-list-column">
+                        <a href="#popup-7" class="popup-link">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M7.2 12H8.8V8.8H12V7.2H8.8V4H7.2V7.2H4V8.8H7.2V12ZM8 16C6.89333 16 5.85333 15.79 4.88 15.37C3.90667 14.95 3.06 14.38 2.34 13.66C1.62 12.94 1.05 12.0933 0.63 11.12C0.21 10.1467 0 9.10667 0 8C0 6.89333 0.21 5.85333 0.63 4.88C1.05 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.05 4.88 0.63C5.85333 0.21 6.89333 0 8 0C9.10667 0 10.1467 0.21 11.12 0.63C12.0933 1.05 12.94 1.62 13.66 2.34C14.38 3.06 14.95 3.90667 15.37 4.88C15.79 5.85333 16 6.89333 16 8C16 9.10667 15.79 10.1467 15.37 11.12C14.95 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.95 11.12 15.37C10.1467 15.79 9.10667 16 8 16ZM8 14.4C9.78667 14.4 11.3 13.78 12.54 12.54C13.78 11.3 14.4 9.78667 14.4 8C14.4 6.21333 13.78 4.7 12.54 3.46C11.3 2.22 9.78667 1.6 8 1.6C6.21333 1.6 4.7 2.22 3.46 3.46C2.22 4.7 1.6 6.21333 1.6 8C1.6 9.78667 2.22 11.3 3.46 12.54C4.7 13.78 6.21333 14.4 8 14.4Z" fill="#1A1E41"/>
+                           </svg>
+                        </a>
+                        <p>15:00</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <div class="wrap-flag">
+                           <img src="images/flag-chf.png" alt="">
+                        </div>
+                        <p>CHF</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column color-for-high">
+                        <p>High</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>Switzerland - New Year's Day</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.7%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>8.8%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.6%</p>
+                     </div>
+                  </div>
+                  <div class="economic-calendar__block-list-item">
+                     <div class="economic-calendar__block-list-column">
+                        <a href="#popup-8" class="popup-link">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M7.2 12H8.8V8.8H12V7.2H8.8V4H7.2V7.2H4V8.8H7.2V12ZM8 16C6.89333 16 5.85333 15.79 4.88 15.37C3.90667 14.95 3.06 14.38 2.34 13.66C1.62 12.94 1.05 12.0933 0.63 11.12C0.21 10.1467 0 9.10667 0 8C0 6.89333 0.21 5.85333 0.63 4.88C1.05 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.05 4.88 0.63C5.85333 0.21 6.89333 0 8 0C9.10667 0 10.1467 0.21 11.12 0.63C12.0933 1.05 12.94 1.62 13.66 2.34C14.38 3.06 14.95 3.90667 15.37 4.88C15.79 5.85333 16 6.89333 16 8C16 9.10667 15.79 10.1467 15.37 11.12C14.95 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.95 11.12 15.37C10.1467 15.79 9.10667 16 8 16ZM8 14.4C9.78667 14.4 11.3 13.78 12.54 12.54C13.78 11.3 14.4 9.78667 14.4 8C14.4 6.21333 13.78 4.7 12.54 3.46C11.3 2.22 9.78667 1.6 8 1.6C6.21333 1.6 4.7 2.22 3.46 3.46C2.22 4.7 1.6 6.21333 1.6 8C1.6 9.78667 2.22 11.3 3.46 12.54C4.7 13.78 6.21333 14.4 8 14.4Z" fill="#1A1E41"/>
+                           </svg>
+                        </a>
+                        <p>All Day</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <div class="wrap-flag">
+                           <img src="images/flag-dnz.png" alt="">
+                        </div>
+                        <p>DNZ</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column color-for-no-impact">
+                        <p>No impact</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>Italy - New Year's Day</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.7%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>8.8%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.6%</p>
+                     </div>
+                  </div>
+                  <div class="economic-calendar__block-list-item">
+                     <div class="economic-calendar__block-list-column">
+                        <a href="#popup-9" class="popup-link">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M7.2 12H8.8V8.8H12V7.2H8.8V4H7.2V7.2H4V8.8H7.2V12ZM8 16C6.89333 16 5.85333 15.79 4.88 15.37C3.90667 14.95 3.06 14.38 2.34 13.66C1.62 12.94 1.05 12.0933 0.63 11.12C0.21 10.1467 0 9.10667 0 8C0 6.89333 0.21 5.85333 0.63 4.88C1.05 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.05 4.88 0.63C5.85333 0.21 6.89333 0 8 0C9.10667 0 10.1467 0.21 11.12 0.63C12.0933 1.05 12.94 1.62 13.66 2.34C14.38 3.06 14.95 3.90667 15.37 4.88C15.79 5.85333 16 6.89333 16 8C16 9.10667 15.79 10.1467 15.37 11.12C14.95 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.95 11.12 15.37C10.1467 15.79 9.10667 16 8 16ZM8 14.4C9.78667 14.4 11.3 13.78 12.54 12.54C13.78 11.3 14.4 9.78667 14.4 8C14.4 6.21333 13.78 4.7 12.54 3.46C11.3 2.22 9.78667 1.6 8 1.6C6.21333 1.6 4.7 2.22 3.46 3.46C2.22 4.7 1.6 6.21333 1.6 8C1.6 9.78667 2.22 11.3 3.46 12.54C4.7 13.78 6.21333 14.4 8 14.4Z" fill="#1A1E41"/>
+                           </svg>
+                        </a>
+                        <p>16:00</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <div class="wrap-flag">
+                           <img src="images/flag-cny.png" alt="">
+                        </div>
+                        <p>CNY</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column color-for-high">
+                        <p>High</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>Wards Total Vehicle Sales</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.7%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>8.8%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.6%</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="economic-calendar__block-list">
+                  <h3>Mon Jan 22 2024</h3>
+                  <div class="economic-calendar__block-list-item">
+                     <div class="economic-calendar__block-list-column">
+                        <a href="#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M7.2 12H8.8V8.8H12V7.2H8.8V4H7.2V7.2H4V8.8H7.2V12ZM8 16C6.89333 16 5.85333 15.79 4.88 15.37C3.90667 14.95 3.06 14.38 2.34 13.66C1.62 12.94 1.05 12.0933 0.63 11.12C0.21 10.1467 0 9.10667 0 8C0 6.89333 0.21 5.85333 0.63 4.88C1.05 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.05 4.88 0.63C5.85333 0.21 6.89333 0 8 0C9.10667 0 10.1467 0.21 11.12 0.63C12.0933 1.05 12.94 1.62 13.66 2.34C14.38 3.06 14.95 3.90667 15.37 4.88C15.79 5.85333 16 6.89333 16 8C16 9.10667 15.79 10.1467 15.37 11.12C14.95 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.95 11.12 15.37C10.1467 15.79 9.10667 16 8 16ZM8 14.4C9.78667 14.4 11.3 13.78 12.54 12.54C13.78 11.3 14.4 9.78667 14.4 8C14.4 6.21333 13.78 4.7 12.54 3.46C11.3 2.22 9.78667 1.6 8 1.6C6.21333 1.6 4.7 2.22 3.46 3.46C2.22 4.7 1.6 6.21333 1.6 8C1.6 9.78667 2.22 11.3 3.46 12.54C4.7 13.78 6.21333 14.4 8 14.4Z" fill="#1A1E41"/>
+                           </svg>
+                        </a>
+                        <p>08:00</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <div class="wrap-flag">
+                           <img src="images/flag-nzd.png" alt="">
+                        </div>
+                        <p>NZD</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column color-for-low">
+                        <p>LOW</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>Wards Total Vehicle Sales</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.7%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>8.8%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.6%</p>
+                     </div>
+                  </div>
+                  <div class="economic-calendar__block-list-item">
+                     <div class="economic-calendar__block-list-column">
+                        <a href="#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M7.2 12H8.8V8.8H12V7.2H8.8V4H7.2V7.2H4V8.8H7.2V12ZM8 16C6.89333 16 5.85333 15.79 4.88 15.37C3.90667 14.95 3.06 14.38 2.34 13.66C1.62 12.94 1.05 12.0933 0.63 11.12C0.21 10.1467 0 9.10667 0 8C0 6.89333 0.21 5.85333 0.63 4.88C1.05 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.05 4.88 0.63C5.85333 0.21 6.89333 0 8 0C9.10667 0 10.1467 0.21 11.12 0.63C12.0933 1.05 12.94 1.62 13.66 2.34C14.38 3.06 14.95 3.90667 15.37 4.88C15.79 5.85333 16 6.89333 16 8C16 9.10667 15.79 10.1467 15.37 11.12C14.95 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.95 11.12 15.37C10.1467 15.79 9.10667 16 8 16ZM8 14.4C9.78667 14.4 11.3 13.78 12.54 12.54C13.78 11.3 14.4 9.78667 14.4 8C14.4 6.21333 13.78 4.7 12.54 3.46C11.3 2.22 9.78667 1.6 8 1.6C6.21333 1.6 4.7 2.22 3.46 3.46C2.22 4.7 1.6 6.21333 1.6 8C1.6 9.78667 2.22 11.3 3.46 12.54C4.7 13.78 6.21333 14.4 8 14.4Z" fill="#1A1E41"/>
+                           </svg>
+                        </a>
+                        <p>All Day</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <div class="wrap-flag">
+                           <img src="images/flag-eur.png" alt="">
+                        </div>
+                        <p>EUR</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column color-for-medium">
+                        <p>Medium</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>Switzerland - New Year's Day</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.7%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>8.8%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.6%</p>
+                     </div>
+                  </div>
+                  <div class="economic-calendar__block-list-item">
+                     <div class="economic-calendar__block-list-column">
+                        <a href="#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M7.2 12H8.8V8.8H12V7.2H8.8V4H7.2V7.2H4V8.8H7.2V12ZM8 16C6.89333 16 5.85333 15.79 4.88 15.37C3.90667 14.95 3.06 14.38 2.34 13.66C1.62 12.94 1.05 12.0933 0.63 11.12C0.21 10.1467 0 9.10667 0 8C0 6.89333 0.21 5.85333 0.63 4.88C1.05 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.05 4.88 0.63C5.85333 0.21 6.89333 0 8 0C9.10667 0 10.1467 0.21 11.12 0.63C12.0933 1.05 12.94 1.62 13.66 2.34C14.38 3.06 14.95 3.90667 15.37 4.88C15.79 5.85333 16 6.89333 16 8C16 9.10667 15.79 10.1467 15.37 11.12C14.95 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.95 11.12 15.37C10.1467 15.79 9.10667 16 8 16ZM8 14.4C9.78667 14.4 11.3 13.78 12.54 12.54C13.78 11.3 14.4 9.78667 14.4 8C14.4 6.21333 13.78 4.7 12.54 3.46C11.3 2.22 9.78667 1.6 8 1.6C6.21333 1.6 4.7 2.22 3.46 3.46C2.22 4.7 1.6 6.21333 1.6 8C1.6 9.78667 2.22 11.3 3.46 12.54C4.7 13.78 6.21333 14.4 8 14.4Z" fill="#1A1E41"/>
+                           </svg>
+                        </a>
+                        <p>09:00</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <div class="wrap-flag">
+                           <img src="images/flag-usd.png" alt="">
+                        </div>
+                        <p>USD</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column color-for-high">
+                        <p>High</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>Wards Total Vehicle Sales</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.7%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>8.8%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.6%</p>
+                     </div>
+                  </div>
+                  <div class="economic-calendar__block-list-item">
+                     <div class="economic-calendar__block-list-column">
+                        <a href="#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M7.2 12H8.8V8.8H12V7.2H8.8V4H7.2V7.2H4V8.8H7.2V12ZM8 16C6.89333 16 5.85333 15.79 4.88 15.37C3.90667 14.95 3.06 14.38 2.34 13.66C1.62 12.94 1.05 12.0933 0.63 11.12C0.21 10.1467 0 9.10667 0 8C0 6.89333 0.21 5.85333 0.63 4.88C1.05 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.05 4.88 0.63C5.85333 0.21 6.89333 0 8 0C9.10667 0 10.1467 0.21 11.12 0.63C12.0933 1.05 12.94 1.62 13.66 2.34C14.38 3.06 14.95 3.90667 15.37 4.88C15.79 5.85333 16 6.89333 16 8C16 9.10667 15.79 10.1467 15.37 11.12C14.95 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.95 11.12 15.37C10.1467 15.79 9.10667 16 8 16ZM8 14.4C9.78667 14.4 11.3 13.78 12.54 12.54C13.78 11.3 14.4 9.78667 14.4 8C14.4 6.21333 13.78 4.7 12.54 3.46C11.3 2.22 9.78667 1.6 8 1.6C6.21333 1.6 4.7 2.22 3.46 3.46C2.22 4.7 1.6 6.21333 1.6 8C1.6 9.78667 2.22 11.3 3.46 12.54C4.7 13.78 6.21333 14.4 8 14.4Z" fill="#1A1E41"/>
+                           </svg>
+                        </a>
+                        <p>13:00</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <div class="wrap-flag">
+                           <img src="images/flag-jpy.png" alt="">
+                        </div>
+                        <p>JPY</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column color-for-no-impact">
+                        <p>No impact</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>Wards Total Vehicle Sales</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.7%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>8.8%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.6%</p>
+                     </div>
+                  </div>
+                  <div class="economic-calendar__block-list-item">
+                     <div class="economic-calendar__block-list-column">
+                        <a href="#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M7.2 12H8.8V8.8H12V7.2H8.8V4H7.2V7.2H4V8.8H7.2V12ZM8 16C6.89333 16 5.85333 15.79 4.88 15.37C3.90667 14.95 3.06 14.38 2.34 13.66C1.62 12.94 1.05 12.0933 0.63 11.12C0.21 10.1467 0 9.10667 0 8C0 6.89333 0.21 5.85333 0.63 4.88C1.05 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.05 4.88 0.63C5.85333 0.21 6.89333 0 8 0C9.10667 0 10.1467 0.21 11.12 0.63C12.0933 1.05 12.94 1.62 13.66 2.34C14.38 3.06 14.95 3.90667 15.37 4.88C15.79 5.85333 16 6.89333 16 8C16 9.10667 15.79 10.1467 15.37 11.12C14.95 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.95 11.12 15.37C10.1467 15.79 9.10667 16 8 16ZM8 14.4C9.78667 14.4 11.3 13.78 12.54 12.54C13.78 11.3 14.4 9.78667 14.4 8C14.4 6.21333 13.78 4.7 12.54 3.46C11.3 2.22 9.78667 1.6 8 1.6C6.21333 1.6 4.7 2.22 3.46 3.46C2.22 4.7 1.6 6.21333 1.6 8C1.6 9.78667 2.22 11.3 3.46 12.54C4.7 13.78 6.21333 14.4 8 14.4Z" fill="#1A1E41"/>
+                           </svg>
+                        </a>
+                        <p>All Day</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <div class="wrap-flag">
+                           <img src="images/flag-cad.png" alt="">
+                        </div>
+                        <p>Cad</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column color-for-low">
+                        <p>Low</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>Italy - New Year's Day</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.7%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>8.8%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.6%</p>
+                     </div>
+                  </div>
+                  <div class="economic-calendar__block-list-item">
+                     <div class="economic-calendar__block-list-column">
+                        <a href="#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M7.2 12H8.8V8.8H12V7.2H8.8V4H7.2V7.2H4V8.8H7.2V12ZM8 16C6.89333 16 5.85333 15.79 4.88 15.37C3.90667 14.95 3.06 14.38 2.34 13.66C1.62 12.94 1.05 12.0933 0.63 11.12C0.21 10.1467 0 9.10667 0 8C0 6.89333 0.21 5.85333 0.63 4.88C1.05 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.05 4.88 0.63C5.85333 0.21 6.89333 0 8 0C9.10667 0 10.1467 0.21 11.12 0.63C12.0933 1.05 12.94 1.62 13.66 2.34C14.38 3.06 14.95 3.90667 15.37 4.88C15.79 5.85333 16 6.89333 16 8C16 9.10667 15.79 10.1467 15.37 11.12C14.95 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.95 11.12 15.37C10.1467 15.79 9.10667 16 8 16ZM8 14.4C9.78667 14.4 11.3 13.78 12.54 12.54C13.78 11.3 14.4 9.78667 14.4 8C14.4 6.21333 13.78 4.7 12.54 3.46C11.3 2.22 9.78667 1.6 8 1.6C6.21333 1.6 4.7 2.22 3.46 3.46C2.22 4.7 1.6 6.21333 1.6 8C1.6 9.78667 2.22 11.3 3.46 12.54C4.7 13.78 6.21333 14.4 8 14.4Z" fill="#1A1E41"/>
+                           </svg>
+                        </a>
+                        <p>14:00</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <div class="wrap-flag">
+                           <img src="images/flag-gbp.png" alt="">
+                        </div>
+                        <p>Gbp</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column color-for-medium">
+                        <p>Medium</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>Wards Total Vehicle Sales</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.7%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>8.8%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.6%</p>
+                     </div>
+                  </div>
+                  <div class="economic-calendar__block-list-item">
+                     <div class="economic-calendar__block-list-column">
+                        <a href="#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M7.2 12H8.8V8.8H12V7.2H8.8V4H7.2V7.2H4V8.8H7.2V12ZM8 16C6.89333 16 5.85333 15.79 4.88 15.37C3.90667 14.95 3.06 14.38 2.34 13.66C1.62 12.94 1.05 12.0933 0.63 11.12C0.21 10.1467 0 9.10667 0 8C0 6.89333 0.21 5.85333 0.63 4.88C1.05 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.05 4.88 0.63C5.85333 0.21 6.89333 0 8 0C9.10667 0 10.1467 0.21 11.12 0.63C12.0933 1.05 12.94 1.62 13.66 2.34C14.38 3.06 14.95 3.90667 15.37 4.88C15.79 5.85333 16 6.89333 16 8C16 9.10667 15.79 10.1467 15.37 11.12C14.95 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.95 11.12 15.37C10.1467 15.79 9.10667 16 8 16ZM8 14.4C9.78667 14.4 11.3 13.78 12.54 12.54C13.78 11.3 14.4 9.78667 14.4 8C14.4 6.21333 13.78 4.7 12.54 3.46C11.3 2.22 9.78667 1.6 8 1.6C6.21333 1.6 4.7 2.22 3.46 3.46C2.22 4.7 1.6 6.21333 1.6 8C1.6 9.78667 2.22 11.3 3.46 12.54C4.7 13.78 6.21333 14.4 8 14.4Z" fill="#1A1E41"/>
+                           </svg>
+                        </a>
+                        <p>15:00</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <div class="wrap-flag">
+                           <img src="images/flag-chf.png" alt="">
+                        </div>
+                        <p>CHF</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column color-for-high">
+                        <p>High</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>Switzerland - New Year's Day</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.7%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>8.8%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.6%</p>
+                     </div>
+                  </div>
+                  <div class="economic-calendar__block-list-item">
+                     <div class="economic-calendar__block-list-column">
+                        <a href="#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M7.2 12H8.8V8.8H12V7.2H8.8V4H7.2V7.2H4V8.8H7.2V12ZM8 16C6.89333 16 5.85333 15.79 4.88 15.37C3.90667 14.95 3.06 14.38 2.34 13.66C1.62 12.94 1.05 12.0933 0.63 11.12C0.21 10.1467 0 9.10667 0 8C0 6.89333 0.21 5.85333 0.63 4.88C1.05 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.05 4.88 0.63C5.85333 0.21 6.89333 0 8 0C9.10667 0 10.1467 0.21 11.12 0.63C12.0933 1.05 12.94 1.62 13.66 2.34C14.38 3.06 14.95 3.90667 15.37 4.88C15.79 5.85333 16 6.89333 16 8C16 9.10667 15.79 10.1467 15.37 11.12C14.95 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.95 11.12 15.37C10.1467 15.79 9.10667 16 8 16ZM8 14.4C9.78667 14.4 11.3 13.78 12.54 12.54C13.78 11.3 14.4 9.78667 14.4 8C14.4 6.21333 13.78 4.7 12.54 3.46C11.3 2.22 9.78667 1.6 8 1.6C6.21333 1.6 4.7 2.22 3.46 3.46C2.22 4.7 1.6 6.21333 1.6 8C1.6 9.78667 2.22 11.3 3.46 12.54C4.7 13.78 6.21333 14.4 8 14.4Z" fill="#1A1E41"/>
+                           </svg>
+                        </a>
+                        <p>All Day</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <div class="wrap-flag">
+                           <img src="images/flag-dnz.png" alt="">
+                        </div>
+                        <p>DNZ</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column color-for-no-impact">
+                        <p>No impact</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>Italy - New Year's Day</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.7%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>8.8%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.6%</p>
+                     </div>
+                  </div>
+                  <div class="economic-calendar__block-list-item">
+                     <div class="economic-calendar__block-list-column">
+                        <a href="#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M7.2 12H8.8V8.8H12V7.2H8.8V4H7.2V7.2H4V8.8H7.2V12ZM8 16C6.89333 16 5.85333 15.79 4.88 15.37C3.90667 14.95 3.06 14.38 2.34 13.66C1.62 12.94 1.05 12.0933 0.63 11.12C0.21 10.1467 0 9.10667 0 8C0 6.89333 0.21 5.85333 0.63 4.88C1.05 3.90667 1.62 3.06 2.34 2.34C3.06 1.62 3.90667 1.05 4.88 0.63C5.85333 0.21 6.89333 0 8 0C9.10667 0 10.1467 0.21 11.12 0.63C12.0933 1.05 12.94 1.62 13.66 2.34C14.38 3.06 14.95 3.90667 15.37 4.88C15.79 5.85333 16 6.89333 16 8C16 9.10667 15.79 10.1467 15.37 11.12C14.95 12.0933 14.38 12.94 13.66 13.66C12.94 14.38 12.0933 14.95 11.12 15.37C10.1467 15.79 9.10667 16 8 16ZM8 14.4C9.78667 14.4 11.3 13.78 12.54 12.54C13.78 11.3 14.4 9.78667 14.4 8C14.4 6.21333 13.78 4.7 12.54 3.46C11.3 2.22 9.78667 1.6 8 1.6C6.21333 1.6 4.7 2.22 3.46 3.46C2.22 4.7 1.6 6.21333 1.6 8C1.6 9.78667 2.22 11.3 3.46 12.54C4.7 13.78 6.21333 14.4 8 14.4Z" fill="#1A1E41"/>
+                           </svg>
+                        </a>
+                        <p>16:00</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <div class="wrap-flag">
+                           <img src="images/flag-cny.png" alt="">
+                        </div>
+                        <p>CNY</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column color-for-high">
+                        <p>High</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>Wards Total Vehicle Sales</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.7%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>8.8%</p>
+                     </div>
+                     <div class="economic-calendar__block-list-column">
+                        <p>6.6%</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <nav class="navigation pagination" aria-label="Записи">
+               <h2 class="screen-reader-text">Навигация по записям</h2>
+               <div class="nav-links">
+                  <a class="prev page-numbers disabled" href="#">Previous</a>
+                  <span aria-current="page" class="page-numbers current">1</span>
+                  <a class="page-numbers" href="#">2</a>
+                  <!--<span class="page-numbers dots">…</span>
+                  <a class="page-numbers" href="#">7</a>-->
+                  <a class="next page-numbers" href="#">Next</a>
+               </div>
+            </nav>
+         </section>
+      </main>
+      
+   </div>
+
+   <script src="js/script.min.js?_v=20240131201345"></script>
+   <script src="files/js/script.js?_v=20240131201345"></script>
+
+   <script src="files/js/jquery-3.6.1.min.js?_v=20240131201345"></script>
+   <script src="files/select/select.js?_v=20240131201345"></script>
+
+   <script src="files/popup/popup.js?_v=20240131201345"></script>
+   <script src="files/spoller/spoller.js?_v=20240131201345"></script>
+
+   <!--<script src="files/lazy-load-for-images/lazy-load-for-images.js?_v=20240131201345"></script>-->
+
+</body>
+</html>
