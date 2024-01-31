@@ -6,12 +6,12 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap&_v=20240131201345" rel="stylesheet">
-   <!--<link rel="stylesheet" href="files/lazy-load-for-images/lazy-load-for-images.css?_v=20240131201345">-->
-   <link rel="stylesheet" href="files/select/select.css?_v=20240131201345">
-   <link rel="stylesheet" href="files/popup/popup.css?_v=20240131201345">
-   <link rel="stylesheet" href="files/spoller/spoller.css?_v=20240131201345">
-   <link rel="stylesheet" href="css/style.min.css?_v=20240131201345">
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap&_v=20240131223224" rel="stylesheet">
+   <!--<link rel="stylesheet" href="files/lazy-load-for-images/lazy-load-for-images.css?_v=20240131223224">-->
+   <link rel="stylesheet" href="files/select/select.css?_v=20240131223224">
+   <link rel="stylesheet" href="files/popup/popup.css?_v=20240131223224">
+   <link rel="stylesheet" href="files/spoller/spoller.css?_v=20240131223224">
+   <link rel="stylesheet" href="css/style.min.css?_v=20240131223224">
    <!--<link rel="icon" type="image/svg+xml" href="images/svg/favicon.svg">-->
    <title>Home</title>
 </head>
@@ -55,50 +55,50 @@
                            <div class="block__text">
                               <ul class="economic-calendar__block-list-currency">
                                  <li>
-                                    <button id="ec-currency-all" type="button">All</button>
+                                    <button id="ec-currency-all" type="button" data-currency="all">All</button>
                                  </li>
                                  <li>
-                                    <button type="button" class="checked">
+                                    <button type="button" class="checked" data-currency="NZD">
                                        <img src="images/flag-nzd.png" alt="">
                                     </button>
                                  </li>
                                  <li>
-                                    <button type="button" class="checked">
+                                    <button type="button" class="checked" data-currency="EUR">
                                        <img src="images/flag-eur.png" alt="">
                                     </button>
                                  </li>
                                  <li>
-                                    <button type="button" class="checked">
+                                    <button type="button" class="checked" data-currency="USD">
                                        <img src="images/flag-usd.png" alt="">
                                     </button>
                                  </li>
                                  <li>
-                                    <button type="button">
+                                    <button type="button" data-currency="JPY">
                                        <img src="images/flag-jpy.png" alt="">
                                     </button>
                                  </li>
                                  <li>
-                                    <button type="button">
+                                    <button type="button" data-currency="CAD">
                                        <img src="images/flag-cad.png" alt="">
                                     </button>
                                  </li>
                                  <li>
-                                    <button type="button" class="checked">
+                                    <button type="button" class="checked" data-currency="GBP">
                                        <img src="images/flag-gbp.png" alt="">
                                     </button>
                                  </li>
                                  <li>
-                                    <button type="button">
+                                    <button type="button" data-currency="CHF">
                                        <img src="images/flag-chf.png" alt="">
                                     </button>
                                  </li>
                                  <li>
-                                    <button type="button" class="checked">
+                                    <button type="button" class="checked" data-currency="NZD">
                                        <img src="images/flag-nzd.png" alt="">
                                     </button>
                                  </li>
                                  <li>
-                                    <button type="button" class="checked">
+                                    <button type="button" class="checked" data-currency="CNY">
                                        <img src="images/flag-cny.png" alt="">
                                     </button>
                                  </li>
@@ -116,20 +116,20 @@
                            </button>
                            <div class="block__text">
                               <ul class="economic-calendar__block-list-weekdays desktop">
-                                 <li><button type="button" id="ec-weekdays-all">All</button></li>
-                                 <li><button type="button" class="checked">Sun</button></li>
-                                 <li><button type="button" class="checked">Mon</button></li>
-                                 <li><button type="button">Tue</button></li>
-                                 <li><button type="button">Wed</button></li>
-                                 <li><button type="button" class="checked">Thu</button></li>
-                                 <li><button type="button" class="checked">Fri</button></li>
+                                 <li><button type="button" id="ec-weekdays-all" data-weekdays="all">All</button></li>
+                                 <li><button type="button" class="checked" data-weekdays="Sun">Sun</button></li>
+                                 <li><button type="button" class="checked" data-weekdays="Mon">Mon</button></li>
+                                 <li><button type="button" data-weekdays="Tue">Tue</button></li>
+                                 <li><button type="button" data-weekdays="Wed">Wed</button></li>
+                                 <li><button type="button" class="checked" data-weekdays="Thu">Thu</button></li>
+                                 <li><button type="button" class="checked" data-weekdays="Fri">Fri</button></li>
                               </ul>
                               <ul class="economic-calendar__block-list-weekdays mobile">
-                                 <li><button type="button" id="ec-weekdays-all">All</button></li>
-                                 <li><button type="button" class="low checked">Low</button></li>
-                                 <li><button type="button" class="medium checked">Medium</button></li>
-                                 <li><button type="button" class="high">High</button></li>
-                                 <li><button type="button" class="no-inpact">No Impact</button></li>
+                                 <li><button type="button" id="ec-weekdays-all" data-weekdays="all">All</button></li>
+                                 <li><button type="button" class="low checked" data-weekdays="Low">Low</button></li>
+                                 <li><button type="button" class="medium checked" data-weekdays="Medium">Medium</button></li>
+                                 <li><button type="button" class="high" data-weekdays="Heigh">High</button></li>
+                                 <li><button type="button" class="no-inpact" data-weekdays="No Impact">No Impact</button></li>
                               </ul>
                            </div>
                         </div>
@@ -874,16 +874,16 @@
       
    </div>
 
-   <script src="js/script.min.js?_v=20240131201345"></script>
-   <script src="files/js/script.js?_v=20240131201345"></script>
+   <script src="js/script.min.js?_v=20240131223224"></script>
+   <script src="files/js/script.js?_v=20240131223224"></script>
 
-   <script src="files/js/jquery-3.6.1.min.js?_v=20240131201345"></script>
-   <script src="files/select/select.js?_v=20240131201345"></script>
+   <script src="files/js/jquery-3.6.1.min.js?_v=20240131223224"></script>
+   <script src="files/select/select.js?_v=20240131223224"></script>
 
-   <script src="files/popup/popup.js?_v=20240131201345"></script>
-   <script src="files/spoller/spoller.js?_v=20240131201345"></script>
+   <script src="files/popup/popup.js?_v=20240131223224"></script>
+   <script src="files/spoller/spoller.js?_v=20240131223224"></script>
 
-   <!--<script src="files/lazy-load-for-images/lazy-load-for-images.js?_v=20240131201345"></script>-->
+   <!--<script src="files/lazy-load-for-images/lazy-load-for-images.js?_v=20240131223224"></script>-->
 
 </body>
 </html>

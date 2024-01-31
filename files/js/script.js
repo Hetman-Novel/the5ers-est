@@ -15,6 +15,10 @@ document.addEventListener("DOMContentLoaded", function() {
       } else {
          // Clicked on a specific currency button
          clickedButton.classList.toggle('checked')
+
+         // Получаем значение атрибута data-current
+         const dataCurrency = clickedButton.getAttribute('data-currency')
+         console.log(dataCurrency)
       }
    }
    // Attach click event listener to all buttons in currency list
@@ -36,6 +40,10 @@ document.addEventListener("DOMContentLoaded", function() {
       } else {
          // Clicked on a specific weekday button
          clickedButton.classList.toggle('checked')
+
+         // Получаем значение атрибута data-weekdays
+         const dataWeekdays = clickedButton.getAttribute('data-weekdays')
+         console.log(dataWeekdays)
       }
    }
    // Attach click event listener to all buttons in weekdays list
@@ -72,38 +80,45 @@ if (window.matchMedia("(max-width: 720.98px)").matches) {
 const blockHead = document.querySelector('.economic-calendar__block-head');
 if (blockHead) {
    const columns = document.querySelectorAll('.economic-calendar__block-head-column:nth-child(3), .economic-calendar__block-head-column:nth-child(4)');
+   let wrapperCreated = false; // Переменная для отслеживания создания контейнера
 
    // Проверяем ширину экрана при загрузке страницы
    wrapColumnsIfNeeded();
-   
+
    // Добавляем обработчик события изменения размера окна
    window.addEventListener('resize', wrapColumnsIfNeeded);
-   
+
    // Функция для обертывания блоков при необходимости
    function wrapColumnsIfNeeded() {
-      if (window.innerWidth <= 720) {
-         // Создаем новый контейнер для обертывания блоков
-         const wrapper = document.createElement('div');
-         wrapper.classList.add('economic-calendar__column-wrapper');
+   if (window.innerWidth <= 720 && !wrapperCreated) {
+      // Создаем новый контейнер для обертывания блоков
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('economic-calendar__column-wrapper');
 
-         // Обертываем каждый блок
-         columns.forEach(column => {
+      // Обертываем каждый блок
+      columns.forEach(column => {
          wrapper.appendChild(column.cloneNode(true));
          column.remove();
-         });
+      });
 
-         // Вставляем новый контейнер перед блоком head
-         blockHead.insertBefore(wrapper, blockHead.firstChild);
-      } else {
-         // Если ширина больше 720px, восстанавливаем блоки
-         const wrapper = blockHead.querySelector('.economic-calendar__column-wrapper');
-         if (wrapper) {
+      // Вставляем новый контейнер перед блоком head
+      blockHead.insertBefore(wrapper, blockHead.firstChild);
+
+      // Устанавливаем флаг, что контейнер создан
+      wrapperCreated = true;
+   } else if (window.innerWidth > 720 && wrapperCreated) {
+      // Если ширина больше 720px и контейнер был создан, восстанавливаем блоки
+      const wrapper = blockHead.querySelector('.economic-calendar__column-wrapper');
+      if (wrapper) {
          columns.forEach(column => {
-            wrapper.removeChild(wrapper.firstChild);
-            blockHead.appendChild(column);
+         wrapper.removeChild(wrapper.firstChild);
+         blockHead.appendChild(column);
          });
          wrapper.remove();
-         }
+
+         // Сбрасываем флаг, что контейнер создан
+         wrapperCreated = false;
       }
+   }
    }
 }
