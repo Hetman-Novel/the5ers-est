@@ -112,8 +112,15 @@
     .select__head {
         border: none;
         padding-left: 0;
-        padding-right: 41px;
+        padding-right: 20px;
         text-align: right;
+
+        &:after {
+            right: -5px;
+        }
+    }
+    .select__head:after {
+        right: -5px;
     }
     .select__list {
         border-top: 1px solid #C8C8C8;
